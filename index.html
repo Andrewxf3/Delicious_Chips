@@ -11,7 +11,7 @@
   <h1>Nuevo pedido</h1>
   <h3>Por favor, ingrese los detalles de su pedido</h3>
 
-  <form>
+  <form id="pedidoForm">
     <div>
       <label for="producto">Seleccione su producto:</label>
       <select name="producto" id="producto" required>
@@ -68,8 +68,20 @@
       <input type="text" name="direccion" id="direccion" required>
     </div>
 
-    <button type="submit">Enviar pedido</button>
+    <button type="submit" id="enviarPedido">Enviar pedido</button>
   </form>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("pedidoForm");
 
+    formulario.addEventListener("submit", function (event) {
+      event.preventDefault(); 
+
+      alert("Tu pedido ha sido procesado con éxito :)");
+
+      formulario.reset();
+    });
+  });
+</script>
 </body>
 </html>
